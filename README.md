@@ -40,13 +40,13 @@ Step 3: Install Required Packages
 Install the necessary packages listed below.
 
 ```
-pip install jupyterlab matplotlib pandas numpy dnspython
+pip install jupyterlab matplotlib pandas numpy dnspython seaborn
 ```
 
 This will install:
 ```
 * JupyterLab - for interactive notebooks
-* Matplotlib - for data visualization
+* Matplotlib, Seaborn - for data visualization
 * Pandas, Numpy - for data manipulation
 * Dnspython - for dns records parsing
 ```
@@ -96,9 +96,14 @@ Data visualization does not require the download of data. Just launch JupyterLab
 Please download data at https://keyinfra.cs.virginia.edu/ and save the data in `data/raw` directory.
 Then run all scripts in `src/` to get new statistics. 
 
+---
+### License
+
+todo: add license
+
 ### Citation
 If you are using our data or code, please cite us:
 
 ```
-todo: update
+todo: wait for IMC publication to update
 ```
