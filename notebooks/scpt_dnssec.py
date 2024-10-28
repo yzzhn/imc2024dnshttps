@@ -2,16 +2,18 @@ import pandas as pd
 import numpy as np
 import os
 import datetime
-import preprocessfns as fns
 import json
+# import local files
+import preprocessfns as fns
 
-def count_rrsig(date_l, datedir, file_name="apex_https.csv"):
+
+def count_rrsig(date_l, datadir, file_name="apex_https.csv"):
     adoptiondf = pd.DataFrame(columns=['date', 'num_rrsig'])
     for day in date_l:
         print ("processing ", day, "...")
         date_str = day.strftime("%Y-%m-%d")
         month_str = day.strftime("%Y-%m")
-        log_path = os.path.join(datedir, month_str, date_str, file_name)
+        log_path = os.path.join(datadir, month_str, date_str, file_name)
         try:
             df = pd.read_csv(log_path)
         except:
@@ -24,14 +26,14 @@ def count_rrsig(date_l, datedir, file_name="apex_https.csv"):
     return adoptiondf
 
 
-def count_adbit(date_l, dom_type, datadir):
+def count_adbit(date_l, datadir, dom_type):
     df_adbit = pd.DataFrame(columns=['date', 'num_adbit'])
     for day in date_l:
         print ("processing ", day, "...")
         date_str = day.strftime("%Y-%m-%d")
         month_str = day.strftime("%Y-%m")
-        log_pathapex = os.path.join(DataRawDir, month_str, date_str, dom_type + "_https.csv")
-        log_pathad = os.path.join(DataRawDir, month_str, date_str, dom_type + "_flags.csv")
+        log_pathapex = os.path.join(datadir, month_str, date_str, dom_type + "_https.csv")
+        log_pathad = os.path.join(datadir, month_str, date_str, dom_type + "_flags.csv")
         
         try:
             dfapex = pd.read_csv(log_pathapex)
@@ -74,9 +76,9 @@ if __name__ == "__main__":
     www_rrsigmerge.to_csv("../data/processed/alldom/rrsig_www.csv", index=False)
 
     ### compute adbit rate given the time range
-    apex_ad = count_adbit(date_l0, "apex", DataRawDir)
+    apex_ad = count_adbit(date_l0, DataRawDir, "apex")
     apex_ad.to_csv("../data/processed/alldom/adbit_apex.csv", index=False)
     
-    www_ad = count_adbit(date_l0, "www", DataRawDir)
+    www_ad = count_adbit(date_l0, DataRawDir, "www")
     www_ad.to_csv("../data/processed/alldom/adbit_www.csv", index=False)
 
