@@ -1,0 +1,12 @@
+# mac storage
+.DS_Store
+
+# vscode
+.vscode
+
+# jupyternotebook checkpoints
+*/.ipynb_checkpoints
+.ipynb_checkpoints
+
+# virtual env
+env/*
