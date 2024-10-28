@@ -25,7 +25,7 @@ def count_httpsrr(date_l, datedir, file_name="apex_https.csv"):
 
 if __name__ == "__main__":
     # set this to data directory
-    DataRawDir = "/scratch/yz6me/dnsdata/httpsrr/"
+    DataRawDir = "../raw"
 
     # Time range from beginning to end
     start_d = datetime.datetime(2023,5,8)

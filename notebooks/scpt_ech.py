@@ -31,7 +31,7 @@ def count_ech(date_l, datadir, dom_type):
 
 if __name__ == "__main__":
     # set this to data directory
-    DataRawDir = "/scratch/yz6me/dnsdata/httpsrr/"
+    DataRawDir = "../raw"
 
     # Time range beginning to end
     start_d = datetime.datetime(2023,5,8)

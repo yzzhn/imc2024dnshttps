@@ -78,7 +78,7 @@ def count_adbit_overlap(date_l, df_overlap, datadir, domtype):
 
 if __name__ == "__main__":
     # set this to data directory
-    DataRawDir = "/scratch/yz6me/dnsdata/httpsrr/"
+    DataRawDir = "../raw"
     
     # Read overlapped domain list
     df_overlap1 = pd.read_csv("../data/processed/overlap/overlapdom_part1.csv")
