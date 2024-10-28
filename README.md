@@ -1,10 +1,22 @@
 # DNS HTTPS Resource Records: An End-to-End Perspective 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+[Paper]() | 
+[Website](https://keyinfra.cs.virginia.edu/dns_http/) | 
+[Dataset](https://keyinfra.cs.virginia.edu/dns_http/artifact)
+
 
 This repo contains artifact for our group's IMC 2024 publication: `Exploring the Ecosystem of DNS HTTPS Resource Records: An End-to-End Perspective.` 
 
 ---
 
-## Table of Contents
+### ✅Todos:
+
+🔲 update links and docs
+
+---
+
+### Table of Contents
 1. [Dataset](#dataset)
 1. [Installation](#installation)
 2. [Folder Directory](#folder-directory)
@@ -99,7 +111,18 @@ Then run all scripts in `src/` to get new statistics.
 ---
 ### License
 
-todo: add license
+This project is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+**Under the following terms:**
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+For the full license, please visit [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/).
 
 ### Citation
 If you are using our data or code, please cite us:
