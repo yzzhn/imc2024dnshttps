@@ -25,7 +25,7 @@ def count_httpsrr(date_l, datedir, file_name="apex_https.csv"):
 
 if __name__ == "__main__":
     # set this to data directory
-    DataRawDir = "../raw"
+    DataRawDir = "../data/parsed"
 
     # Time range from beginning to end
     start_d = datetime.datetime(2023,5,8)
@@ -36,8 +36,8 @@ if __name__ == "__main__":
 
     ### compute httpsrr adoption rate given the time range for 
     df_httpsrr = count_httpsrr(date_l, DataRawDir, "apex_https.csv")
-    df_httpsrr.to_csv("../data/processed/alldom/adoption_apex_httpsrr.csv", index=False)
+    df_httpsrr.to_csv("../data/plotting/alldom/adoption_apex_httpsrr.csv", index=False)
     
     df_httpsrr_www = count_httpsrr(date_l, DataRawDir, "www_https.csv")
-    df_httpsrr_www.to_csv("../data/processed/alldom/adoption_www_httpsrr.csv", index=False)
+    df_httpsrr_www.to_csv("../data/plotting/alldom/adoption_www_httpsrr.csv", index=False)
 

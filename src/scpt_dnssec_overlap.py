@@ -78,11 +78,11 @@ def count_adbit_overlap(date_l, df_overlap, datadir, domtype):
 
 if __name__ == "__main__":
     # set this to data directory
-    DataRawDir = "../raw"
+    DataRawDir = "../data/parsed"
     
     # Read overlapped domain list
-    df_overlap1 = pd.read_csv("../data/processed/overlap/overlapdom_part1.csv")
-    df_overlap2 = pd.read_csv("../data/processed/overlap/overlapdom_part2.csv")
+    df_overlap1 = pd.read_csv("../data/plotting/overlap/overlapdom_part1.csv")
+    df_overlap2 = pd.read_csv("../data/plotting/overlap/overlapdom_part2.csv")
     
     # Time range from beginning to end
     start_d = datetime.datetime(2023,5,8)
@@ -94,22 +94,22 @@ if __name__ == "__main__":
     
     ### compute httpsrr rrsig rate given the time range 
     apex_rrsig = count_rrsig_overlap(date_l1, df_overlap1, DataRawDir, "apex_https.csv")
-    apex_https = pd.read_csv("../data/processed/overlap/adoption_apex_httpsrr1.csv")
+    apex_https = pd.read_csv("../data/plotting/overlap/adoption_apex_httpsrr1.csv")
     apex_rrsigmerge = apex_rrsig.merge(apex_https, how='inner', on='date')
-    apex_rrsigmerge.to_csv("../data/processed/overlap/rrsig_apex1.csv", index=False)
+    apex_rrsigmerge.to_csv("../data/plotting/overlap/rrsig_apex1.csv", index=False)
 
     
     www_rrsig = count_rrsig_overlap(date_l1, df_overlap1, DataRawDir, "www_https.csv")
-    www_https = pd.read_csv("../data/processed/overlap/adoption_www_httpsrr1.csv")
+    www_https = pd.read_csv("../data/plotting/overlap/adoption_www_httpsrr1.csv")
     www_rrsigmerge = www_rrsig.merge(www_https, how='inner', on='date')
-    www_rrsigmerge.to_csv("../data/processed/overlap/rrsig_www1.csv", index=False)
+    www_rrsigmerge.to_csv("../data/plotting/overlap/rrsig_www1.csv", index=False)
 
     ### compute adbit rate given the time range
     apex_ad = count_adbit_overlap(date_l1, df_overlap1, DataRawDir, "apex")
-    apex_ad.to_csv("../data/processed/overlap/adbit_apex1.csv", index=False)
+    apex_ad.to_csv("../data/plotting/overlap/adbit_apex1.csv", index=False)
     
     www_ad = count_adbit_overlap(date_l1, df_overlap1, DataRawDir, "www")
-    www_ad.to_csv("../data/processed/overlap/adbit_www1.csv", index=False)
+    www_ad.to_csv("../data/plotting/overlap/adbit_www1.csv", index=False)
 
     ### Time range 2
     start_d = datetime.datetime(2023,8,2)
@@ -120,21 +120,21 @@ if __name__ == "__main__":
 
     ### compute httpsrr rrsig rate given the time range 
     apex_rrsig = count_rrsig_overlap(date_l2, df_overlap2, DataRawDir, "apex_https.csv")
-    apex_https = pd.read_csv("../data/processed/overlap/adoption_apex_httpsrr2.csv")
+    apex_https = pd.read_csv("../data/plotting/overlap/adoption_apex_httpsrr2.csv")
     apex_rrsigmerge = apex_rrsig.merge(apex_https, how='inner', on='date')
-    apex_rrsigmerge.to_csv("../data/processed/overlap/rrsig_apex2.csv", index=False)
+    apex_rrsigmerge.to_csv("../data/plotting/overlap/rrsig_apex2.csv", index=False)
 
     www_rrsig = count_rrsig_overlap(date_l2, df_overlap2, DataRawDir, "www_https.csv")
-    www_https = pd.read_csv("../data/processed/overlap/adoption_www_httpsrr2.csv")
+    www_https = pd.read_csv("../data/plotting/overlap/adoption_www_httpsrr2.csv")
     www_rrsigmerge = www_rrsig.merge(www_https, how='inner', on='date')
-    www_rrsigmerge.to_csv("../data/processed/overlap/rrsig_www2.csv", index=False)
+    www_rrsigmerge.to_csv("../data/plotting/overlap/rrsig_www2.csv", index=False)
 
     ### compute adbit rate given the time range
     apex_ad = count_adbit_overlap(date_l2, df_overlap2, DataRawDir, "apex")
-    apex_ad.to_csv("../data/processed/overlap/adbit_apex2.csv", index=False)
+    apex_ad.to_csv("../data/plotting/overlap/adbit_apex2.csv", index=False)
     
     www_ad = count_adbit_overlap(date_l2, df_overlap2, DataRawDir, "www")
-    www_ad.to_csv("../data/processed/overlap/adbit_www2.csv", index=False)
+    www_ad.to_csv("../data/plotting/overlap/adbit_www2.csv", index=False)
 
     
 

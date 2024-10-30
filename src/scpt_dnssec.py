@@ -55,7 +55,7 @@ def count_adbit(date_l, datadir, dom_type):
 
 if __name__ == "__main__":
     # set this to data directory
-    DataRawDir = "../raw"
+    DataRawDir = "../data/parsed"
 
     # Time range beginning to end
     start_d = datetime.datetime(2023,5,8)
@@ -66,19 +66,19 @@ if __name__ == "__main__":
 
     ### compute httpsrr rrsig rate given the time range 
     apex_rrsig = count_rrsig(date_l0, DataRawDir, "apex_https.csv")
-    apex_https = pd.read_csv("../data/processed/alldom/adoption_apex_httpsrr.csv")
+    apex_https = pd.read_csv("../data/plotting/alldom/adoption_apex_httpsrr.csv")
     apex_rrsigmerge = apex_rrsig.merge(apex_https, how='inner', on='date')
-    apex_rrsigmerge.to_csv("../data/processed/alldom/rrsig_apex.csv", index=False)
+    apex_rrsigmerge.to_csv("../data/plotting/alldom/rrsig_apex.csv", index=False)
 
     www_rrsig = count_rrsig(date_l0, DataRawDir, "www_https.csv")
-    www_https = pd.read_csv("../data/processed/alldom/adoption_www_httpsrr.csv")
+    www_https = pd.read_csv("../data/plotting/alldom/adoption_www_httpsrr.csv")
     www_rrsigmerge = www_rrsig.merge(www_https, how='inner', on='date')
-    www_rrsigmerge.to_csv("../data/processed/alldom/rrsig_www.csv", index=False)
+    www_rrsigmerge.to_csv("../data/plotting/alldom/rrsig_www.csv", index=False)
 
     ### compute adbit rate given the time range
     apex_ad = count_adbit(date_l0, DataRawDir, "apex")
-    apex_ad.to_csv("../data/processed/alldom/adbit_apex.csv", index=False)
+    apex_ad.to_csv("../data/plotting/alldom/adbit_apex.csv", index=False)
     
     www_ad = count_adbit(date_l0, DataRawDir, "www")
-    www_ad.to_csv("../data/processed/alldom/adbit_www.csv", index=False)
+    www_ad.to_csv("../data/plotting/alldom/adbit_www.csv", index=False)
 

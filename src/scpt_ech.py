@@ -31,7 +31,7 @@ def count_ech(date_l, datadir, dom_type):
 
 if __name__ == "__main__":
     # set this to data directory
-    DataRawDir = "../raw"
+    DataRawDir = "../data/parsed"
 
     # Time range beginning to end
     start_d = datetime.datetime(2023,5,8)
@@ -42,13 +42,13 @@ if __name__ == "__main__":
 
     ### compute httpsrr rrsig rate given the time range 
     apex_ech = count_ech(date_l0, DataRawDir, "apex")
-    apex_https = pd.read_csv("../data/processed/alldom/adoption_apex_httpsrr.csv")
+    apex_https = pd.read_csv("../data/plotting/alldom/adoption_apex_httpsrr.csv")
     apex_ech_merge = apex_ech.merge(apex_https, how='inner', on='date')
-    apex_ech_merge.to_csv("../data/processed/alldom/ech_apex.csv", index=False)
+    apex_ech_merge.to_csv("../data/plotting/alldom/ech_apex.csv", index=False)
 
     www_ech = count_ech(date_l0, DataRawDir, "www")
-    www_https = pd.read_csv("../data/processed/alldom/adoption_www_httpsrr.csv")
+    www_https = pd.read_csv("../data/plotting/alldom/adoption_www_httpsrr.csv")
     www_ech_merge = www_ech.merge(www_https, how='inner', on='date')
-    www_ech_merge.to_csv("../data/processed/alldom/ech_www.csv", index=False)
+    www_ech_merge.to_csv("../data/plotting/alldom/ech_www.csv", index=False)
 
 
