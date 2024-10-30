@@ -26,7 +26,7 @@ This repo contains artifact for our group's IMC 2024 publication: `Exploring the
 ---
 ## Dataset
 
-Our group plans to keep updating DNS HTTPS records for the Tranco 1 million domains on a monthly basis. For further information please vist our group's website: https://keyinfra.cs.virginia.edu/dns_http/
+Our group plans to keep updating DNS HTTPS records for the Tranco 1 million domains on a monthly basis. For further information please visit our group's website: https://keyinfra.cs.virginia.edu/dns_http/
 
 ---
 ## Installation
@@ -79,12 +79,10 @@ imc2024dnshttps/
 │   ├── *_dnssec.ipynb       # signed and authenticated DNS HTTPS RR rate
 │   └── *_ech.ipynb          # DNS HTTPS RR with ECH configuration
 │
-├── data/                    # Data files used in the project
-│   ├── raw/                 # Raw data files
-|   |  ├── 2023-05/*         # montly folders
-|   |  ├── 2023-06/*
-|   |  └── .../
-│   └── processed/           # Processed data files
+├── data/                    # Data files placeholder. 
+│   ├── parsed/              # Parsed data files placeholder
+│   ├── plotting/            # Plotting data files
+│   └── readme               # Instructions for datasets
 │
 ├── src/                     # Source code for the project
 │   ├── scpt_*.py            # Script for data processing for dynamic trancon 1m list
