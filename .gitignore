@@ -10,3 +10,6 @@
 
 # virtual env
 env/*
+
+## data parsed
+data/parsed/*/*/*.csv
